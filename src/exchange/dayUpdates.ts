@@ -12,7 +12,7 @@ export function updateUtradeDayData(event: ethereum.Event): UTradeDayData {
 
   let utradeDayData = UTradeDayData.load(dayID.toString());
   if (utradeDayData === null) {
-    utradeDayData = new utradeDayData(dayID.toString());
+    utradeDayData = new UTradeDayData(dayID.toString());
     utradeDayData.date = dayStartTimestamp;
     utradeDayData.dailyVolumeUSD = ZERO_BD;
     utradeDayData.dailyVolumeBNB = ZERO_BD;
