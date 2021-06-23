@@ -1,0 +1,41 @@
+{
+  "name": "utrade-bsc-subgraph",
+  "description": "uTrade BSC Subgraph",
+  "version": "2.0.0",
+  "repository": "git@github.com:unifiprotocol/utrade-bsc-subgraph.git",
+  "author": "UnifiProtocol",
+  "license": "MIT",
+  "scripts": {
+    "codegen:blocks": "graph codegen subgraphs/blocks.yaml",
+    "codegen:exchange": "graph codegen subgraphs/exchange.yaml",
+    "codegen:pairs": "graph codegen subgraphs/pairs.yaml",
+    "build:blocks": "graph build subgraphs/blocks.yaml",
+    "build:exchange": "graph build subgraphs/exchange.yaml",
+    "build:pairs": "graph build subgraphs/pairs.yaml",
+    "deploy:blocks": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ unifiprotocol/blocks subgraphs/blocks.yaml",
+    "deploy:exchange": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ unifiprotocol/exchange subgraphs/exchange.yaml",
+    "deploy:pairs": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ unifiprotocol/pairs subgraphs/pairs.yaml",
+    "format:check": "prettier --check '*/**/*.{js,ts}'",
+    "format:write": "prettier --write '*/**/*.{js,ts}'",
+    "lint": "eslint '*/**/*.{js,ts}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format:check",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@graphprotocol/graph-cli": "^0.20.0",
+    "@graphprotocol/graph-ts": "^0.20.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^4.3.8",
+    "prettier": "^2.3.0",
+    "typescript": "^4.3.2"
+  }
+}
