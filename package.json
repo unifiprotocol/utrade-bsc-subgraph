@@ -28,7 +28,7 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
-    "@graphprotocol/graph-cli": "^0.20.0",
+    "@graphprotocol/graph-cli": "^0.29.0",
     "@graphprotocol/graph-ts": "^0.20.0",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
